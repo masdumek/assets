@@ -17,7 +17,7 @@
                     <xsl:if test="sitemap:sitemapindex">Index</xsl:if>
                     <xsl:if test="sitemap:urlset/sitemap:url">Posts</xsl:if>
                 </title>
-                <link rel="stylesheet" href="/assets/css/tachyons.min.css"/>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/masdumek/assets@main/css/tachyons.min.css"/>
             </head>
             <body class="ph3 pb3 mid-gray">
                 <header class="mw8 pv4 center">
