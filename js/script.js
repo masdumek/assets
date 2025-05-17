@@ -49,7 +49,10 @@ function ucwords(str) {
     elLoader.innerHTML = "Loading data...";
 
     if (slug.indexOf("&m=") > 0) slug = slug.split("&m=")[0];
-    slug = decodeURIComponent(slug.replace(/\-+/g, " ").replace(/\++/g, ' '));
+    slug = decodeURIComponent(slug.replace(/\-+/g, " "));
+    try {
+      slug = slug.replaceAll('+', ' ');
+    } catch (e) {}
 
     const params = new URLSearchParams({
       q: decodeURIComponent(slug),
