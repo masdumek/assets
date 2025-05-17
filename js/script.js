@@ -68,7 +68,7 @@ function ucwords(str) {
         if (data.related.length > 0) {
           data.related.forEach((r) => {
             const liHref = r.replace(/\s+/g, "-").toLowerCase();
-            const li = `<li class="Tags-item u-background"><a class="Tags-link u-clickable" rel="tag" href="${path}?r=${decodeURIComponent(
+            const li = `<li class="Tags-item u-background"><a class="Tags-link u-clickable" rel="tag" href="/${pathRule}${decodeURIComponent(
               liHref
             )}">${decodeURIComponent(r)}</a></li>`;
             related += li;
@@ -95,7 +95,7 @@ function ucwords(str) {
   let __c = "";
   keywords.forEach((k, i) => {
     const liHref = k.replace(/\s+/g, "-").toLowerCase();
-    __c += `<li class="Tags-item u-background"><a rel="bookmark" class="Tags-link u-clickable" href="/?r=${liHref}">${ucwords(
+    __c += `<li class="Tags-item u-background"><a rel="bookmark" class="Tags-link u-clickable" href="/${pathRule+liHref}">${ucwords(
       k
     )}</a></li>`;
   });
