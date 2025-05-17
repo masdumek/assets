@@ -55,7 +55,7 @@ function ucwords(str) {
     });
 
     document.title = ucwords(slug);
-    await ___(apiHost + "/run.json?" + params).then((data) => {
+    await ___(apiHost + "/run?" + params).then((data) => {
       if (data) {
         let related = "";
         if (data.related.length > 0) {
