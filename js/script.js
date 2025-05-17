@@ -40,12 +40,16 @@ function ucwords(str) {
     slug = loc.search.split(pathRule)[1];
   }
 
+  if (loc.search.startsWith('?q=')) {
+    slug = loc.search.split('?q=')[1];
+  }
+
   if (slug) {
     elHomepage.remove();
     elLoader.innerHTML = "Loading data...";
 
     if (slug.indexOf("&m=") > 0) slug = slug.split("&m=")[0];
-    slug = decodeURIComponent(slug.replace(/\-+/g, " "));
+    slug = decodeURIComponent(slug.replace(/\-+/g, " ").replace(/\++/g, ' '));
 
     const params = new URLSearchParams({
       q: decodeURIComponent(slug),
